@@ -1,3 +1,6 @@
+Climbr LFG is a social app for climbers.  Utilizing maps and locations, Climbr allows its users to let others know when and where they'll be doing their next send.  Belay on!
+
+
 USER STORIES
 
 Core Features:
