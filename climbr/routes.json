@@ -1,0 +1,59 @@
+[
+    {
+      "name": "Brooklyn Boulders(BK)",
+      "lat-long": [40.679638, -73.984267],
+      "type": "gym",
+      "difficulty-rating": "undefined",
+      "number-of-routes": 1000,
+      "info": "Classic nyc climbing gym with hundreds of routes, a great workout area and classes.  Welcoming to climbers of every level.  Busy on the weekends!",
+      "submitted-by": "admin"
+    },
+    {
+      "name": "Brooklyn Boulders(QNS)",
+      "lat-long": [40.752806, -73.940531],
+      "type": "gym",
+      "difficulty-rating": "variety",
+      "number-of-routes": 1000,
+      "info": "BKB's newest location.  Massive facility with a wide array of bouldering, trad and auto-belay routes.  Yoga classes, weight room and art gallery.  Great new expansion!",
+      "submitted-by": "admin"
+    },
+    {
+      "name": "DUMBO Boulders",
+      "lat-long": [40.703881, -73.988715],
+      "type": "gym",
+      "difficulty-rating": "variety",
+      "number-of-routes": 1000,
+      "info": "New outdoor climbing space right under the Manhattan Bridge.  Creative routes and colorful walls.  A great place to climb if you want sythetic holds without the cost of indoor gyms.",
+      "submitted-by": "admin"
+    },
+    {
+      "name": "Chelsea Piers",
+      "lat-long": [40.748126, -74.008299],
+      "type": "gym",
+      "difficulty-rating": "variety",
+      "number-of-routes": 1000,
+      "info": "Medium sized climbing area within the sprawling sports facility.  Nice clean space with a nice selection of trad routes and decent bouldering.  Nice locker room.",
+      "submitted-by": "admin"
+    },
+    {
+      "name": "Rat Rock",
+      "lat-long": [40.7692, -73.9776],
+      "type": "bouldering",
+      "difficulty-rating": "v0 - v5",
+      "number-of-routes": 3,
+      "info": "Small outdoor boulder in the heart of NYC, right on the southern edge of Central Park.  Sister boulder to Cat Rock.  Contains 3 predefined routes with plenty of freedom to build your own.  Climbers are often found here on the weekends!",
+      "submitted-by": "admin"
+    },
+    {
+      "name": "Cat Rock",
+      "lat-long": [40.7683, -73.9737],
+      "type": "bouldering",
+      "difficulty-rating": "v0 - v8",
+      "number-of-routes": 8,
+      "info": "15' outdoor boulder in the heart of NYC, right on the southern edge of Central Park.  Has 8 predefined routes, ranging from the very easy to the advanced.  Sister route to Rat Rock.  Climbers are often found here on the weekends!",
+      "submitted-by": "admin"
+    }
+]
+
+
+
