@@ -1,13 +1,13 @@
 // /* set up the Tom Cruise Movie  DB */
 'use strict'
-const express         = require('express')
-const logger          = require('morgan')
-const db              = require('./models/routes.js')
-const app             = express()
-const path            = require('path')
-const PORT            = process.env.PORT || 3000
-const homeController       = require('./controllers/home-controller');
-const userController       = require('./controllers/user');
+const express                  = require('express')
+const logger                   = require('morgan')
+const db                       = require('./models/routes.js')
+const app                      = express()
+const path                     = require('path')
+const PORT                     = process.env.PORT || 3000
+const homeController           = require('./controllers/home-controller');
+const locationsController      = require('./controllers/locations-controller');
 
 // set up logging so that we can see what's happening
 app.use( logger('dev') )
@@ -24,6 +24,10 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 app.use('/', homeController);
-// app.use('/user', userController);
+// app.use('/locations', locationsController);
+app.get('/locations', db.searchRoutes, function(req,res){
+  res.json(res.filterRoutes)
+})
+
 
 

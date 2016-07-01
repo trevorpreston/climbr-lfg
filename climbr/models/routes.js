@@ -2,10 +2,10 @@ const MongoClient  = require('mongodb').MongoClient
 const dbConnection = 'mongodb://localhost:27017/test'
 
 console.log('model connected!')
-//get requested routes from db to home-controller.js
-module.exports = {
-  searchRoutes: function(req, res, next){
+
+function searchRoutes(req, res, next){
     const filterObj={}
+    let filteredLocations=[]
     MongoClient.connect(dbConnection, function(err,db){
       if(err) throw err
       db.collection('routes')
@@ -15,12 +15,11 @@ module.exports = {
           res.filterRoutes = data
           next()
         })
-      // console.log(db.collection('routes'))
     })
   }
 
 
+module.exports = { searchRoutes }
 
-}
 
 
