@@ -20,7 +20,7 @@ router.get('/login', function(req,res) {
   res.render('user/login');
 });
 
-router.post('/login', loginUser,function(req,res) {
+router.post('/login', loginUser, function(req,res) {
   console.log(res.user);
   req.session.user = res.user;
 

@@ -9,6 +9,7 @@ const path                     = require('path');
 const app                      = express();
 const userController           = require('./controllers/user.js')
 const homeController           = require('./controllers/home-controller');
+const routesController         = require('./controllers/routes-controller');
 const db                       = require('./models/routes.js');
 const PORT                     = process.env.PORT || 3000
 
@@ -43,6 +44,7 @@ app.get('/locations', db.searchRoutes, function(req,res){
   res.json(res.filterRoutes)
 })
 app.use('/user', userController)
+app.use('/routes', routesController)
 
 
 

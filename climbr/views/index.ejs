@@ -1,29 +1,109 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <link rel="stylesheet" href="style.css">
-  <script type='text/javascript' src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL0Qihhkmwv2XX3IAFw8ZHeJMjGEn1CME"></script>
-  <script type="text/javascript" src="main.js"></script>
-</head>
+<% include ./partials/head %>
 <body>
-  <h1>
-  <% if(user){ %>
-    Welcome, <%= user.fname %> <%= user.lname %>
-  <% } else { %>
-    Welcome, Guest
-  <% } %>
-  </h1>
-  <div>
-    <form method="post" action="user/logout?_method=DELETE">
-      <input type="submit" value="Logout">
+  <div class="container">
+    <div class="login-nav">
+      <img src="logo.png" alt="" id="logo">
+      <% if(!user){ %>
+        <form action="/user/new"">
+          <ul>
+            <li>
+              <input type="submit"  value="Sign Up!" id="signupBtn">
+            </li>
+          </ul>
+        </form>
+        <form action="/user/login" method="post">
+          <ul>
+            <li><span>Welcome, Guest</span></li>
+            <li><label for="">Email:</label></li>
+            <li><input type="text" name="email"></li>
+            <li><label for="">Password:</label></li>
+            <li><input type="password" name="password"></li>
+            <li><input type="submit" value="Login" class="userBtn"></li>
+          </ul>
+        </form>
+      <% } else { %>
+        <div id="welcome">
+          <ul>
+            <li>
+              <span>Welcome, <%= user.fname %> <%= user.lname %></span>
+            </li>
+            <li>
+              <form method="post" action="user/logout?_method=DELETE">
+                <input type="submit" value="Logout" class="userBtn">
+              </form>
+            </li>
+          </ul>
+        </div>
+      <% } %>
+    </div>
+    <div id="map">
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL0Qihhkmwv2XX3IAFw8ZHeJMjGEn1CME"></script>
+    </div>
+    <form method="post" action="/routes/new">
+      <div id="createNew" class="infoBox">
+        <h1>Submit A New Spot!</h1>
+        <span id="dothis">click anywhere on the map to set the location</span>
+        <div class="new-cont">
+          <h3>Lat/Long</h3>
+          <input type="text" name="createLatLong" id="addRoute inputLatLong">
+        </div>
+        <div class="new-cont">
+          <h3>Name</h3>
+          <input type="text" name="createName" id="addRoute inputName">
+        </div>
+        <div class="new-cont">
+          <h3>Type</h3>
+          <select name="createType" id="addRoute inputType">
+            <option value="gym">gym</option>
+            <option value="trad">trad</option>
+            <option value="bouldering">bouldering</option>
+            <option value="sport">sport</option>
+          </select>
+        </div>
+        <div class="new-cont">
+          <h3>Difficulty</h3>
+          <input type="text" name="createDifficulty" id="addRoute inputDifficulty">
+        </div>
+        <div class="new-cont">
+          <h3>Info</h3>
+          <textarea name="createSummary" rows="10" cols="30"></textarea>
+        </div>
+        <div class="new-cont">
+          <h3>Submitted By</h3>
+          <input type="text" name="createContributor" id="addRoute inputContributor">
+        </div>
+        <input type="submit" value="Submit!" id="addRouteBtn">
+      </div>
     </form>
+    <div id="viewInfo" class="infoBox">
+      <div class="info-cont">
+        <h2>Name</h2>
+        <p id=routeName>Brooklyn Boulders(BK)</p>
+      </div>
+      <div class="info-cont">
+        <h2>Type</h2>
+        <p id=routeType>gym</p>
+      </div>
+      <div class="info-cont">
+        <h2>Difficulty</h2>
+        <p id=routeDifficulty>all levels</p>
+      </div>
+      <div class="info-cont">
+        <h2>Info</h2>
+        <p id=routeInfo>Classic nyc climbing gym with hundreds of routes, a great workout area and classes.  Welcoming to climbers of every level.  Busy on the weekends!</p>
+      </div>
+      <div class="info-cont">
+        <h2>Submitted By</h2>
+        <p id=routeContributor>admin</p>
+      </div>
+      <div class="new-route-cont">
+        <span>Know of a route that isn't here?</span>
+        <button id=addNewBtn>Add A New Route!</button>
+      </div>
+    </div>
   </div>
-<div id="map">
-</div>
 </body>
 </html>
 

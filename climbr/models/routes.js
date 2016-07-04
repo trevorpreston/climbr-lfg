@@ -16,10 +16,49 @@ function searchRoutes(req, res, next){
           next()
         })
     })
+}
+
+function createRoute(req, res, next){
+    MongoClient.connect(dbConnection, function(err, db) {
+      console.log("THIS IS REQ.BODY.NAME"+req.body.createName)
+      let routeInfo = {
+        name: req.body.createName,
+        'lat-long': JSON.parse('['+req.body.createLatLong + ']'),
+        type: req.body.createType,
+        'difficulty-rating': req.body.createDifficulty,
+        'info': req.body.createSummary,
+        'submitted-by': req.body.createContributor
+      }
+      db.collection('routes').insert(routeInfo, function(err, result) {
+        console.log("THIS IS ROUTE INFO.NAME"+ routeInfo.name)
+        if(err) throw err;
+        next();
+      })
+    })
+
+}
+
+
+function createUser(req, res, next) {
+  createSecure( req.body.email, req.body.password, saveUser)
+  function saveUser(email, hash) {
+    MongoClient.connect(dbConnection, function(err, db) {
+      let userInfo = {
+        fname: req.body.fname,
+        lname: req.body.lname,
+        email: email,
+        passwordDigest: hash
+      }
+      db.collection('users').insertOne(userInfo, function(err, result) {
+        if(err) throw err;
+        next();
+      });
+    });
   }
+}
 
 
-module.exports = { searchRoutes }
+module.exports = { searchRoutes, createRoute }
 
 
 
