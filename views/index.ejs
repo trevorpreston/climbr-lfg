@@ -15,7 +15,7 @@
         </form>
         <form action="/user/login" method="post">
           <ul>
-            <li><span>Welcome, Guest</span></li>
+            <li><span>Welcome, Guest!</span></li>
             <li><label for="">Email:</label></li>
             <li><input type="text" name="email"></li>
             <li><label for="">Password:</label></li>
@@ -98,10 +98,12 @@
         <h2>Submitted By</h2>
         <p id=routeContributor>admin</p>
       </div>
+      <% if(user) {%>
       <div class="new-route-cont">
         <span>Know of a route that isn't here?</span>
         <button id=addNewBtn>Add A New Route!</button>
       </div>
+      <% } %>
     </div>
   </div>
 </body>

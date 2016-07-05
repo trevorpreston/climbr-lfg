@@ -162,6 +162,25 @@ h3{
   margin-right: 30px;
 }
 
+.signUpContainer{
+  background-color: #FFC107;
+  height: 50%;
+  width: 30%;
+  margin: 10% auto;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 24px;
+  padding: 10px
+}
+
+.signUpParam{
+  margin-top: 15px
+}
+
+#submitUser{
+  margin-top: 20px
+}
+
 /*
 #make-account {
   position: relative

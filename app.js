@@ -7,10 +7,10 @@ const methodOverride           = require('method-override');
 const path                     = require('path');
 
 const app                      = express();
-const userController           = require('./controllers/user.js')
+const userController           = require('./controllers/user')
 const homeController           = require('./controllers/home-controller');
 const routesController         = require('./controllers/routes-controller');
-const db                       = require('./models/routes.js');
+const db                       = require('./models/routes');
 const PORT                     = process.env.PORT || 3000
 
 // Adding session as a middleware

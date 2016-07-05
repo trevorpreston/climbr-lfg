@@ -3,6 +3,8 @@ const dbConnection = process.env['MONGODB_URI'] || 'mongodb://localhost:27017/te
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSalt(10);
 
+
+
 function loginUser(req,res,next) {
   let email = req.body.email;
   let password = req.body.password;
