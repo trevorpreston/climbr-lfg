@@ -1,4 +1,3 @@
-//receive data from routes.js, parse and send name + lat/long to google maps.
 
 console.log("present!")
 const routesModel = require('../models/routes')
