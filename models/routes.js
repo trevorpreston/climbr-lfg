@@ -20,7 +20,6 @@ function searchRoutes(req, res, next){
 
 function createRoute(req, res, next){
     MongoClient.connect(dbConnection, function(err, db) {
-      console.log("THIS IS REQ.BODY.NAME"+req.body.createName)
       let routeInfo = {
         name: req.body.createName,
         'lat-long': JSON.parse('['+req.body.createLatLong + ']'),
@@ -30,7 +29,6 @@ function createRoute(req, res, next){
         'submitted-by': req.body.createContributor
       }
       db.collection('routes').insert(routeInfo, function(err, result) {
-        console.log("THIS IS ROUTE INFO.NAME"+ routeInfo.name)
         if(err) throw err;
         next();
       })
