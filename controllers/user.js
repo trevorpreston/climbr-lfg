@@ -3,7 +3,6 @@ const { createUser, loginUser } = require('../models/user');
 
 
 router.get('/new', function(req,res) {
-  console.log('ERIN IS A BUTT')
   res.render('user/new');
 });
 

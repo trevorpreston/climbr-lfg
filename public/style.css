@@ -1,5 +1,5 @@
 html, body {
-  background-color: #B2EBF2;
+  background-color: #F5F5F5;
   color: black;
   height: 100%;
   overflow-x: hidden;
@@ -18,7 +18,7 @@ html, body {
   position: fixed;
   top: 0px;
   width: 100vw;
-  background-color: #B2EBF2;
+  background-color: #F5F5F5;
   z-index: 4
 }
 
@@ -57,7 +57,7 @@ h3{
 
 #viewInfo {
   margin-top: 60px;
-  background-color: #B2EBF2;
+  background-color: #F5F5F5;
   width: 20%;
   max-width: 20%;
   height: 90vh
@@ -76,7 +76,7 @@ h3{
 }
 
 .info-cont{
-  background-color:#00BCD4;
+  background-color:#E4F5EA;
   border-radius: 12px;
   width: 90%;
   margin: 0 auto 10px auto;
@@ -123,7 +123,7 @@ h3{
 }
 
 #addRouteBtn{
-  background-color: #00BCD4;
+  background-color: #E4F5EA;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -137,7 +137,7 @@ h3{
 .userBtn{
   margin-top: -5px;
   margin-right: 20px;
-  background-color: #00BCD4;
+  background-color: #E4F5EA;
   border: none;
   color: white;
   padding: 8px 12px;
